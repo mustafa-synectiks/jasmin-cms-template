@@ -53,4 +53,6 @@ pricing:
         - asfasdfasdfsdf sdfsdaf
         - asdfasdf sdafasd
         - sdafasdfasdf
+workflow: >
+  This is workflow 
 ---
