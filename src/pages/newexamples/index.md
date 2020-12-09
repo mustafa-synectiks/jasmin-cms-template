@@ -1,8 +1,8 @@
 ---
 templateKey: newexamples-page
 path: /newexamples
-title: New Examples
-image: /img/chemex.jpg
+title: New Examples sdfsdfsf
+image: /img/blog-index.jpg
 main:
   heading: Great coffee
   product:
@@ -10,24 +10,24 @@ main:
       heading: Product 1
       description: Product testing testing testing testing testing testing testing
 testimonials:
-  - quote: The first time I tried Kaldi’s coffee, I couldn’t even believe that was
-      the same thing I’ve been drinking every morning. The first time I tried
-      Kaldi’s coffee, I couldn’t even believe that was the same thing I’ve been
-      drinking every morning.
-    author: – Elisabeth Kaurismäki
+  - quote: The first time Ifasfsdf  tried Kaldi’s coffee, I couldn’t even believe
+      that was the same thing I’ve been drinking every morning. The first time I
+      tried Kaldi’s coffee, I couldn’t even believe that was the same thing I’ve
+      been drinking every morning.
+    author: – Elisabeth Kaurismäki sdfasd
   - quote: The first time I tried Kaldi’s coffee, I couldn’t even believe that was
       the same thing I’ve been drinking every morning. The first time I tried
       Kaldi’s coffee,
     author: – Philipp Trommler
 pricing:
   heading: Monthly subscriptions
-  description: We make it easy to make great coffee a part of your life. Choose
-    one of our monthly subscription plans to receive great coffee at your
+  description: We make it easy t sdfasdf o make great coffee a part of your life.
+    Choose one of our monthly subscription plans to receive great coffee at your
     doorstep each month. Contact us about more details and payment info.
   plans:
     - plan: Small
       description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
-      price: "75"
+      price: "7512"
       items:
         - 3 lbs of coffee per month
         - Green or roasted beans"
@@ -46,4 +46,11 @@ pricing:
         - Whatever you need
         - Green or roasted beans
         - Unlimited varieties
+    - plan: This is new plan
+      price: "2323"
+      description: sadfasdf
+      items:
+        - asfasdfasdfsdf sdfsdaf
+        - asdfasdf sdafasd
+        - sdafasdfasdf
 ---
