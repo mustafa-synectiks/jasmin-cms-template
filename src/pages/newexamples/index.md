@@ -6,42 +6,9 @@ image: /img/chemex.jpg
 main:
   heading: Great coffee
   product:
-    - Image:
-        image: /img/products-grid1.jpg
-        alt: Product 1
+    - image: /img/products-grid2.jpg
       heading: Product 1
       description: Product testing testing testing testing testing testing testing
-      image:
-        image: /img/products-grid2.jpg
-        alt: Product 1
-    - Image:
-        image: /img/products-grid2.jpg
-        alt: Product 2
-      description: Product testing testing testing testing testing testing testing
-      heading: Product 2
-      image:
-        image: /img/products-grid3.jpg
-        alt: Product 2
-    - image:
-        image: /img/products-grid2.jpg
-        alt: Product 3
-      description: Product testing testing testing testing testing testing testing
-      heading: Product 3
-    - image:
-        image: /img/products-grid3.jpg
-        alt: Product 4
-      description: Product testing testing testing testing testing testing testing
-      heading: Product 4
-    - description: Product testing testing testing testing testing testing testing
-      heading: Product 5
-      image:
-        alt: Product 5
-        image: /img/products-grid2.jpg
-    - image:
-        image: /img/products-grid3.jpg
-        alt: Product 6
-      description: Product testing testing testing testing testing testing testing
-      heading: Product 6
 testimonials:
   - quote: The first time I tried Kaldi’s coffee, I couldn’t even believe that was
       the same thing I’ve been drinking every morning. The first time I tried

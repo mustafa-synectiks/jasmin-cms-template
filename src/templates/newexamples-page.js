@@ -171,12 +171,9 @@ export const newExamplesPageQuery = graphql`
           heading
           product {
             image {
-              alt
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 352, quality: 92) {
-                    ...GatsbyImageSharpFluid
-                  }
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
