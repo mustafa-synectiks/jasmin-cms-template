@@ -7,6 +7,7 @@ import BlogPostPreview from './preview-templates/BlogPostPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
 import NewExamplesPagePreview from './preview-templates/NewExamplesPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
+import WorkflowPreview from './preview-templates/WorkflowPreview'
 
 
 CMS.registerMediaLibrary(uploadcare)
@@ -17,3 +18,4 @@ CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('newexamples', NewExamplesPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
+CMS.registerPreviewTemplate('workflow', WorkflowPreview)
