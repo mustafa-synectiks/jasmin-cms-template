@@ -34,12 +34,6 @@ const Workflow = ({ data }) => {
     )
 }
 
-Workflow.propTypes = {
-    data: PropTypes.shape({
-        markdownRemark: PropTypes.object,
-    }),
-}
-
 export default Workflow
 
 export const workflowPageQuery = graphql`

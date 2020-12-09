@@ -7,8 +7,12 @@ class WorkflowComponent extends React.Component {
     workflowRef = null;
     constructor(props) {
         super(props);
+        let data = [];
+        if(props.data){
+            data = JSON.parse(props.data);
+        }
         this.state = {
-            data: [],
+            data: data,
         };
         this.workflowRef = React.createRef();
     }
