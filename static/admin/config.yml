@@ -79,4 +79,4 @@ collections:
         name: "workflow"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "workflow-page"}
-          - {label: "Workflow JSON", name: "workflowjson", widget: "string"}
+          - {label: "Workflow JSON", name: "workflowjson", widget: "object", fields: [{label: Data, name: data, widget: text}]}
