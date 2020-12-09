@@ -5,7 +5,7 @@ import { WorkflowTemplate } from '../../templates/workflow-page'
 const WorkflowPagePreview = ({ entry, getAsset }) => {
   return (
     <WorkflowTemplate
-      workflowjson={entry.getIn(['data', 'workflow'])}
+      workflowjson={entry.getIn(['data', 'workflowjson'])}
     />
   )
 }
