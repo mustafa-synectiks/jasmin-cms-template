@@ -11,7 +11,7 @@ export const WorkflowTemplate = ({
         <section className="section">
             <div className="container content">
                 <div className="">
-                    <WorkflowComponent data={workflowjson} />
+                    <WorkflowComponent data={workflowjson.data} />
                 </div>
             </div>
         </section>
@@ -19,7 +19,7 @@ export const WorkflowTemplate = ({
 }
 
 WorkflowTemplate.propTypes = {
-    workflowjson: PropTypes.string,
+    workflowjson: PropTypes.object,
 }
 
 const WorkflowPage = ({ data }) => {
@@ -48,7 +48,9 @@ export const workflowPageQuery = graphql`
   query WorkflowPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
-        workflowjson
+        workflowjson {
+            data
+        }
       }
     }
   }
