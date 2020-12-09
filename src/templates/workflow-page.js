@@ -11,7 +11,7 @@ export const WorkflowTemplate = ({
         <section className="section">
             <div className="container content">
                 <div className="">
-                    <WorkflowComponent data={workflowjson}/>
+                    <WorkflowComponent data={workflowjson} />
                 </div>
             </div>
         </section>
@@ -22,7 +22,7 @@ WorkflowTemplate.propTypes = {
     workflowjson: PropTypes.string,
 }
 
-const Workflow = ({ data }) => {
+const WorkflowPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark;
 
     return (
@@ -34,7 +34,15 @@ const Workflow = ({ data }) => {
     )
 }
 
-export default Workflow
+WorkflowPage.propTypes = {
+    data: PropTypes.shape({
+        markdownRemark: PropTypes.shape({
+            frontmatter: PropTypes.object,
+        }),
+    }),
+}
+
+export default WorkflowPage
 
 export const workflowPageQuery = graphql`
   query WorkflowPage($id: String!) {
