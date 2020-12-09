@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 export const WorkflowTemplate = ({
-    workflow
+    workflowjson
 }) => {
     return (
         <section className="section">
@@ -12,7 +12,7 @@ export const WorkflowTemplate = ({
                 <div className="columns">
                     <div className="column is-10 is-offset-1">
                         <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                            {workflow}
+                            {workflowjson}
                         </h1>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ export const WorkflowTemplate = ({
 }
 
 WorkflowTemplate.propTypes = {
-    workflow: PropTypes.string,
+    workflowjson: PropTypes.string,
 }
 
 const Workflow = ({ data }) => {
@@ -31,7 +31,7 @@ const Workflow = ({ data }) => {
     return (
         <Layout>
             <WorkflowTemplate
-                workflow={frontmatter.workflow}
+                workflowjson={frontmatter.workflowjson}
             />
         </Layout>
     )
@@ -49,7 +49,7 @@ export const workflowPageQuery = graphql`
   query WorkflowPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
-        workflow
+        workflowjson
       }
     }
   }
