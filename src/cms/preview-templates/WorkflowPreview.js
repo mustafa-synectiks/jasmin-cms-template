@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import { WorkflowTemplate } from '../../templates/workflow-page'
 
 const WorkflowPagePreview = ({ entry, getAsset }) => {
+  const data = entry.getIn(['data', 'workflowjson']);
   return (
     <WorkflowTemplate
-      workflowjson={entry.getIn(['data', 'workflowjson'])}
+      workflowjson={data && data.toJS()}
     />
   )
 }
