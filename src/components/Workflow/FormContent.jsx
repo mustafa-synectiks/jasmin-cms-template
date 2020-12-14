@@ -34,6 +34,18 @@ class FormContent extends Component {
         });
     };
 
+    componentDidUpdate(prevProps, prevState) {
+        if (JSON.stringify(prevProps.content) !== JSON.stringify(this.props.content)) {
+            const { content } = this.props;
+            this.setState({
+                title: content.title,
+                subHeading: content.subHeading,
+                formData: content.content,
+                isSubmitted: this.props.isSubmittedStatus,
+            });
+        }
+    }
+
     handleStateChange = (e, index, type) => {
         const { formData } = this.state;
         const { name, value, checked } = e.target;
