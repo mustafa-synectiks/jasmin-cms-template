@@ -7,11 +7,12 @@ import WorkflowComponent from '../components/WorkflowComponent';
 export const WorkflowTemplate = ({
     workflowjson
 }) => {
+    const data = workflowjson ? workflowjson.data : '[]';
     return (
         <section className="section">
             <div className="container content">
                 <div className="">
-                    <WorkflowComponent data={workflowjson.data} />
+                    <WorkflowComponent data={data} />
                 </div>
             </div>
         </section>
