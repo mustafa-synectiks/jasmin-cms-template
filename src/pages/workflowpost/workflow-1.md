@@ -1,6 +1,5 @@
 ---
-templateKey: workflow-page
-title: Workflow 1
+title: Worfklow 1
 workflowjson:
   data: "[{\"title\":\"Event Details\",\"tabTitle\":\"Event
     Details\",\"subHeading\":\"This is sub
