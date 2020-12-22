@@ -8,9 +8,7 @@ export class Workflow extends Component {
         super(props);
         this.state = {
             data: this.props.formData,
-            currentTab: 0,
             activeIndex: 0,
-            waitForResponse: this.props.waitForResponse,
             loading: false
         }
         this.formRef = React.createRef();
@@ -20,7 +18,6 @@ export class Workflow extends Component {
         if (JSON.stringify(prevProps.formData) !== JSON.stringify(this.props.formData)) {
             this.setState({
                 data: this.props.formData,
-                currentTab: 0,
                 activeIndex: 0,
             });
         }
@@ -37,26 +34,55 @@ export class Workflow extends Component {
     }
 
     onClickNext = () => {
-        const { activeIndex, waitForResponse } = this.state;
+        const { activeIndex } = this.state;
         let data = this.formRef.current.getDataFromForm();
         if (data.isValid) {
-            this.props.onClickNext(activeIndex, data);
-            if (!waitForResponse) {
-                this.navigateTab(activeIndex + 1);
-            } else {
-                this.setState({
-                    loading: true
-                });
-            }
+            delete data.isValid;
+            this.callApi(data);
         }
     };
 
-    showNextTab = () => {
-        const { activeIndex } = this.state;
-        this.navigateTab(activeIndex + 1);
-        this.setState({
-            loading: false
-        });
+    callApi = (jsonData) => {
+        const { activeIndex, data } = this.state;
+        if (data[activeIndex] && data[activeIndex].apiEndPoint) {
+            let requestOptions = {
+                method: "POST",
+                body: JSON.stringify(jsonData)
+            };
+            if (this.props.getApiHeaders) {
+                let headers = this.props.getApiHeaders();
+                requestOptions = {
+                    ...requestOptions,
+                    headers
+                };
+            }
+            this.setState({
+                loading: true
+            });
+            let apiCall = fetch(data[activeIndex].apiEndPoint, requestOptions).then(response => response.json());
+            apiCall.then(
+                response => {
+                    this.navigateTab(activeIndex + 1);
+                    this.setState({
+                        loading: false
+                    });
+                    if (this.props.onFormSubmitted) {
+                        this.props.onFormSubmitted(activeIndex, response);
+                    }
+                },
+                error => {
+                    this.navigateTab(activeIndex + 1);
+                    this.setState({
+                        loading: false
+                    });
+                    if (this.props.onFormSubmitted) {
+                        this.props.onFormSubmitted(activeIndex, error);
+                    }
+                }
+            );
+        } else {
+            this.navigateTab(activeIndex + 1);
+        }
     };
 
     displayTabs = () => {
@@ -71,13 +97,20 @@ export class Workflow extends Component {
         return retData;
     }
 
+    onChangeComponent = (e, componentIndex, type) => {
+        const { activeIndex } = this.state;
+        if (this.props.onChangeComponent) {
+            this.props.onChangeComponent(e, type, activeIndex, componentIndex);
+        }
+    };
+
     displaytabContent = () => {
         const { data, activeIndex } = this.state;
         let tabData = [];
         for (let i = 0; i < data.length; i++) {
             if (data[i].content !== undefined && i === activeIndex) {
                 tabData.push(
-                    <FormContent key={`formcontent-${i}`} content={data[i]} ref={this.formRef} />
+                    <FormContent key={`formcontent-${i}`} content={data[i]} ref={this.formRef} onChangeComponent={this.onChangeComponent} />
                 );
             } else {
                 tabData.push(
